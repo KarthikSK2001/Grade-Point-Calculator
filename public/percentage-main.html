@@ -1,0 +1,3520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
+    <meta name="og:description" content="CALCULATE YOUR BMSCE SGPA,CGPA, PERCENTAGE AND STORE YOUR DATA.">
+    <meta name="author" content="developed by Karthik.S (UG CSE BMSCE)" />
+    <meta property="og:title" content="SGPA,CGPA, PERCENTAGE CALCULATOR FOR BMSCE STUDENTS" />
+    <meta property="og:url" content="https://gradepointcalculator.herokuapp.com/" />
+    <meta name="description" content="CALCULATE SGPA,CGPA,PERCENTAGE AND STORE DATA OF BMSCE RESULTS QUICKLY HERE!">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <title>Grade Point Calculator</title>
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew&display=swap" rel="stylesheet">
+
+    <link rel="alternate" type="application/atom+xml" title="gradepointcalculator - Atom">
+    <link rel="shortcut icon" href="https://bmsce.ac.in/assets/img/favicon.png" type="image/x-icon" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9MT6DKTQMG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9MT6DKTQMG');
+    </script>
+</head>
+
+
+
+
+
+<style>
+    div.wrapper {
+        width: auto;
+        height: auto;
+        margin: 0px auto;
+        padding: 12px;
+        display: block;
+        position: relative;
+        box-sizing: border-box;
+        background-size: auto;
+        background-repeat: no-repeat;
+        background-position: left top;
+    }
+    
+    header {
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+    }
+    
+    header a.logo {
+        float: left;
+        width: 180px;
+        height: auto;
+        margin: 0px 0px 16px 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+    }
+    
+    header a.logo span.large {
+        color: rgba(255, 255, 255, 1);
+        width: 180px;
+        height: 36px;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 28px;
+        font-style: normal;
+        text-align: center;
+        font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;
+        font-weight: bold;
+        line-height: 36px;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    header a.logo span.small {
+        color: rgba(255, 255, 255, 1);
+        width: 180px;
+        height: 20px;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 15px;
+        font-style: normal;
+        text-align: center;
+        font-family: 'Arial';
+        font-weight: bold;
+        line-height: 20px;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+    }
+    
+    header nav {
+        float: left;
+        width: 270px;
+        height: auto;
+        margin: 0px 0px 12px 12px;
+        padding: 0px;
+        display: block;
+        position: relative;
+    }
+    
+    header nav a {
+        color: rgba(255, 255, 255, 1);
+        width: auto;
+        height: 26px;
+        margin: 0px;
+        padding: 0px 12px;
+        display: block;
+        position: relative;
+        font-size: 16px;
+        text-align: left;
+        box-sizing: border-box;
+        font-weight: bold;
+        line-height: 26px;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    header nav a:last-of-type {
+        margin-top: 8px;
+    }
+    
+    header nav a:hover,
+    header nav a:focus,
+    header nav a.active {
+        color: rgba(96, 96, 96, 1);
+    }
+    
+    header nav a i[class] {
+        float: right;
+        width: 18px;
+        height: 26px;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 16px;
+        text-align: center;
+        line-height: 26px;
+    }
+    
+    header div.intro {
+        color: rgba(255, 255, 255, 1);
+        width: auto;
+        height: 60px;
+        margin: 0px 0px 8px 0px;
+        padding: 0px 0px 0px 12px;
+        display: table-cell;
+        position: relative;
+        font-size: 13px;
+        text-align: justify;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        line-height: 17px;
+        vertical-align: middle;
+    }
+    
+    header div.intro strong {
+        font-weight: bold;
+    }
+    
+    .banner_top {
+        width: auto;
+        height: 90px;
+        margin: 4px auto 8px auto;
+        padding: 0px;
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+    
+    @media(max-width:1018px) {
+        header nav {
+            float: none;
+            width: auto;
+            margin: 0px 0px 12px 192px;
+        }
+        header div.intro {
+            height: auto;
+            padding: 0px;
+            display: block;
+        }
+        .banner_top {
+            margin-top: 0px;
+        }
+    }
+    
+    main,
+    aside {
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+    }
+    
+    main {
+        overflow: hidden;
+    }
+    
+    aside {
+        float: right;
+        width: 336px;
+        margin-left: 8px;
+    }
+    
+    .banner_right,
+    .banner_corner {
+        width: 336px;
+        height: auto;
+        margin: 0px 0px 8px 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        text-align: center;
+        min-height: 280px;
+    }
+    
+    @media(max-width:1018px) {
+        aside {
+            width: 200px;
+        }
+        .banner_right,
+        .banner_corner {
+            width: 200px;
+            min-height: 200px;
+        }
+    }
+    
+    div.content {
+        color: rgba(0, 0, 0, 1);
+        width: auto;
+        height: auto;
+        margin: 0px 0px 12px 0px;
+        padding: 8px;
+        display: block;
+        position: relative;
+        font-size: 13px;
+        box-sizing: border-box;
+        text-align: justify;
+        font-weight: normal;
+        line-height: 17px;
+    }
+    
+    div.content.transparent {
+        background: none;
+        margin-bottom: 4px;
+    }
+    
+    div.content h1 {
+        color: rgba(0, 0, 0, 1);
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 18px;
+        text-align: left;
+        font-weight: bold;
+        line-height: normal;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    div.content h2 {
+        color: rgba(0, 0, 0, 1);
+        width: auto;
+        height: auto;
+        margin: 12px 0px 0px 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 14px;
+        text-align: left;
+        font-weight: bold;
+        line-height: normal;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    }
+    
+    div.content span.head {
+        color: rgba(0, 0, 0, 1);
+        width: auto;
+        height: auto;
+        margin: 0px 0px 8px 0px;
+        padding: 0px 0px 8px 0px;
+        display: block;
+        position: relative;
+        font-size: 15px;
+        text-align: left;
+        font-weight: bold;
+        line-height: normal;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        border-bottom: 1px dashed rgba(204, 204, 204, 1);
+    }
+    
+    div.content span.head.white {
+        color: rgba(255, 255, 255, 1);
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.8);
+    }
+    
+    div.content span.head i {
+        margin-right: 6px;
+    }
+    
+    div.content span.info {
+        color: rgba(96, 96, 96, 1);
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 4px 0px 8px 0px;
+        display: block;
+        position: relative;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: normal;
+        border-bottom: 1px dashed rgba(204, 204, 204, 1);
+    }
+    
+    div.content span.info.text {
+        margin-bottom: 8px;
+    }
+    
+    div.content a {
+        color: rgba(229, 68, 68, 1);
+        text-decoration: none;
+    }
+    
+    div.content a:hover,
+    div.content a:focus {
+        text-decoration: underline;
+    }
+    
+    div.content a.tool {
+        color: rgba(255, 255, 255, 1);
+        width: auto;
+        height: auto;
+        margin: 0px 0px 8px 0px;
+        padding: 0px 12px;
+        display: block;
+        position: relative;
+        font-size: 14px;
+        text-align: left;
+        box-sizing: border-box;
+        font-weight: bold;
+        line-height: 26px;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    div.content a.tool:last-of-type {
+        margin-bottom: 0px;
+    }
+    
+    div.content a.tool:hover,
+    div.content a.tool:focus {
+        color: rgba(96, 96, 96, 1);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(192, 192, 192, 1) 100%);
+    }
+    
+    div.content a.tool i {
+        float: right;
+        width: 18px;
+        height: 26px;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        line-height: 26px;
+    }
+    
+    div.content ul,
+    div.content ol {
+        margin: 8px 16px;
+        padding: 8px;
+    }
+    
+    div.content div.about {
+        color: rgba(0, 0, 0, 1);
+        width: 100%;
+        height: auto;
+        margin: 0px;
+        padding: 0px 8px 0px 0px;
+        display: block;
+        position: relative;
+        overflow: auto;
+        max-height: 240px;
+        box-sizing: border-box;
+    }
+    
+    div.content div.about::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+    }
+    
+    div.content div.about::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    
+    div.content div.about table td,
+    div.content div.about table th,
+    div.content div.about table caption {
+        padding: 2px 4px;
+        text-align: center;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form {
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 4px 0px 0px 0px;
+        display: block;
+        position: relative;
+        text-align: left;
+    }
+    
+    .form div.file {
+        color: white;
+        width: 100%;
+        height: 70px;
+        border: 1px solid black;
+        margin: 8px 0px 0px 0px;
+        padding: 0px 8px;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        font-size: 16px;
+        text-align: center;
+        box-sizing: border-box;
+        font-weight: bold;
+        line-height: 70px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        background-color: rgba(238, 238, 238, 1);
+        border-radius: 3px;
+    }
+    
+    .form div.file.drag {
+        background-color: rgba(204, 204, 204, 1);
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form div.file span.counter {
+        right: 2px;
+        color: black;
+        margin: 2px;
+        padding: 3px 6px;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 14px;
+        background-color: rgba(204, 204, 204, 1);
+        border: 1.5px solid black;
+        border-radius: 30%;
+    }
+    
+    .form div.file span.counter.active {
+        color: rgba(255, 255, 255, 1);
+    }
+    
+    .form div.file i {
+        margin-right: 8px;
+    }
+    
+    .form div.file input[type="file"] {
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        margin: 0px;
+        padding: 0px;
+        opacity: 0;
+        display: block;
+        position: absolute;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form textarea[name="input"],
+    div.content textarea[name="output"] {
+        width: 100%;
+        height: 212px;
+        border: 1px solid rgba(204, 204, 204, 1);
+        resize: vertical;
+        margin: 8px 0px 0px 0px;
+        padding: 4px;
+        display: block;
+        position: relative;
+        overflow: auto;
+        font-size: 13px;
+        text-align: left;
+        box-sizing: border-box;
+        min-height: 212px;
+        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-weight: normal;
+        line-height: normal;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form span.notice {
+        color: rgba(0, 0, 0, 1);
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 8px 0px 0px 0px;
+        display: block;
+        position: relative;
+        font-size: 12px;
+        text-align: justify;
+        line-height: 18px;
+    }
+    
+    .form span.notice i[class] {
+        margin-right: 6px;
+    }
+    
+    .form input[type="number"],
+    .form select {
+        color: rgba(0, 0, 0, 1);
+        width: 136px;
+        height: 15px;
+        border: 1px solid rgba(204, 204, 204, 1);
+        margin: 8px 8px 0px 0px;
+        padding: 0px 8px;
+        display: inline-block;
+        position: relative;
+        font-size: 13px;
+        text-align: left;
+        box-sizing: border-box;
+        line-height: normal;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form select {
+        cursor: pointer;
+        padding: 0px 4px;
+    }
+    
+    .form select[disabled] {
+        color: rgba(204, 204, 204, 1);
+        cursor: not-allowed;
+    }
+    
+    .form input[type="radio"],
+    .form input[type="checkbox"] {
+        width: auto;
+        height: auto;
+        cursor: pointer;
+        margin: 10px 8px 0px 0px;
+        padding: 0px;
+        display: inline;
+        position: relative;
+        line-height: 18px;
+        vertical-align: -2px;
+    }
+    
+    .form label {
+        color: rgba(0, 0, 0, 1);
+        width: auto;
+        height: auto;
+        margin: 8px 0px 0px 0px;
+        padding: 0px;
+        display: inline;
+        position: relative;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .form label i[class] {
+        margin-right: 6px;
+    }
+    
+    .form div.live {
+        color: rgba(0, 0, 0, 1);
+        width: 136px;
+        height: 26px;
+        cursor: pointer;
+        border: 1px solid rgba(204, 204, 204, 1);
+        margin: 8px 8px 0px 0px;
+        padding: 0px 0px 0px 8px;
+        display: inline-block;
+        position: relative;
+        font-size: 13px;
+        text-align: left;
+        box-sizing: border-box;
+        line-height: 24px;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form div.live i {
+        font-size: 15px;
+        line-height: 24px;
+        margin-right: 8px;
+    }
+    
+    .form div.live.active {
+        color: rgba(255, 255, 255, 1);
+    }
+    
+    .banner_center {
+        width: auto;
+        height: 60px;
+        margin: 18px 0px 12px 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+    
+    .banner_center.last {
+        margin-bottom: 0px;
+    }
+    
+    .banner_crispox {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+    }
+    
+    .form div.state {
+        color: rgba(0, 0, 0, 1);
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(204, 204, 204, 1);
+        margin: 8px 0px 0px 0px;
+        padding: 8px 12px;
+        display: none;
+        position: relative;
+        font-size: 13px;
+        text-align: left;
+        box-sizing: border-box;
+        line-height: 21px;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form div.state.last {
+        margin-top: 12px;
+    }
+    
+    .form div.state i[class] {
+        margin-right: 6px;
+    }
+    
+    .form div.state a {
+        font-weight: bold;
+    }
+    
+    .form div.state hr {
+        width: 100%;
+        height: 0px;
+        border: none;
+        margin: 4px 0px 8px 0px;
+        padding: 0px;
+        border-top: 1px dashed rgba(204, 204, 204, 1);
+    }
+    
+    .form div.state textarea {
+        color: rgba(0, 0, 0, 1);
+        width: 100%;
+        height: 30px;
+        border: none;
+        resize: vertical;
+        margin: 0px;
+        padding: 0px 4px 0px 0px;
+        display: block;
+        position: relative;
+        overflow: auto;
+        font-size: 13px;
+        text-align: left;
+        box-sizing: border-box;
+        min-height: 212px;
+        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        font-weight: normal;
+        line-height: normal;
+        background-color: rgba(238, 238, 238, 1);
+    }
+    
+    .form div.file,
+    .form label,
+    .form div.live,
+    .form button {
+        user-select: none;
+        -ms-user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    }
+    
+    a.mobile {
+        color: rgba(255, 255, 255, 1);
+        width: auto;
+        height: 26px;
+        border: 1px solid rgba(192, 192, 192, 1);
+        margin: 0px 0px 12px 0px;
+        padding: 0px;
+        display: block;
+        position: relative;
+        font-size: 14px;
+        text-align: center;
+        box-sizing: border-box;
+        font-weight: bold;
+        line-height: 24px;
+        text-decoration: none;
+        background-color: rgba(160, 160, 160, 1);
+    }
+    
+    a.mobile:hover,
+    a.mobile:focus {
+        text-decoration: underline;
+    }
+    
+    a.mobile i {
+        margin-right: 8px;
+    }
+    
+    footer {
+        color: rgba(255, 255, 255, 1);
+        width: auto;
+        height: auto;
+        margin: 0px;
+        padding: 8px;
+        display: block;
+        position: relative;
+        font-size: 13px;
+        text-align: justify;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        line-height: 17px;
+    }
+    
+    footer i[class] {
+        margin-right: 6px;
+    }
+    
+    footer a {
+        color: rgba(255, 255, 255, 1);
+        width: auto;
+        height: 26px;
+        cursor: pointer;
+        margin: 8px 8px 8px 0px;
+        padding: 0px 12px;
+        display: inline-block;
+        position: relative;
+        font-size: 14px;
+        text-align: left;
+        box-sizing: border-box;
+        font-weight: bold;
+        line-height: 26px;
+        text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+        text-decoration: none;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+    
+    footer a:last-of-type {
+        margin-right: 8px;
+    }
+    
+    footer a:hover,
+    footer a:focus {
+        text-decoration: underline;
+    }
+    
+    .qc-cmp2-persistent-link {
+        background-color: #276399;
+    }
+</style>
+<style>
+    input[type=text],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        resize: vertical;
+        /* text-transform: uppercase; */
+    }
+    /* Style the label to display next to the inputs */
+    
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+    /* Style the submit button */
+    
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    /* Style the submit button */
+    
+    input[type=button] {
+        background-color: #ff0000;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+    }
+    /* Style the container */
+    
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    /* Floating column for labels: 25% width */
+    
+    .col-25 {
+        float: left;
+        width: 23%;
+        margin-top: 6px;
+    }
+    /* Floating column for inputs: 75% width */
+    
+    .col-75 {
+        float: left;
+        width: 75%;
+        margin-top: 6px;
+    }
+    /* Clear floats after the columns */
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    
+    @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-weight: bolder;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        width: 100%;
+        font-weight: bolder;
+        border: 3.5px solid #161b22;
+        text-transform: uppercase;
+    }
+    
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+        border: 3.5px solid #161b22;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #b3ffb3;
+        text-transform: uppercase;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    input {
+        /* text-transform: uppercase; */
+    }
+    /* Style inputs, select elements and textareas */
+    
+    input[type=text],
+    select,
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        resize: vertical;
+        /* text-transform: uppercase; */
+    }
+    /* Style the label to display next to the inputs */
+    
+    label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+    }
+    /* Style the submit button */
+    
+    input[type=submit] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+    }
+    /* Style the submit button */
+    
+    input[type=button] {
+        background-color: #ff0000;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: left;
+    }
+    /* Style the container */
+    
+    .container {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+    /* Floating column for labels: 25% width */
+    
+    .col-50 {
+        float: left;
+        width: 44%;
+        margin-top: 6px;
+    }
+    
+    .col-25 {
+        float: left;
+        width: 15%;
+        margin-top: 6px;
+    }
+    /* Floating column for inputs: 75% width */
+    
+    .col-75 {
+        float: left;
+        width: 29%;
+        margin-top: 6px;
+    }
+    /* Clear floats after the columns */
+    
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    
+    @media screen and (max-width: 600px) {
+        .col-25,
+        .col-75,
+        .col-50,
+        input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
+        hr {
+            width: 100%;
+        }
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-weight: bolder;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        width: 100%;
+        font-weight: bolder;
+        border: 3.5px solid #161b22;
+        text-transform: uppercase;
+        border-radius: 5px;
+    }
+    
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+        border: 3.5px solid #161b22;
+        font-weight: bolder;
+        text-transform: uppercase;
+        border-radius: 5px;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #b3ffb3;
+        text-transform: uppercase;
+        background-color: #f2f2f2;
+        font-weight: bolder;
+        border-radius: 5px;
+    }
+    
+    .center {
+        text-align: center;
+        font-weight: bolder;
+        border-radius: 5px;
+    }
+    
+    .pgb .step {
+        text-align: center;
+        position: relative;
+    }
+    
+    .pgb h2 {
+        font-size: 1.3rem;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    .pgb .step p {
+        position: absolute;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        height: 60px;
+        width: 100%;
+        text-align: center;
+        display: block;
+        z-index: 3;
+        color: #fff;
+        font-size: 160%;
+        line-height: 55px;
+        opacity: .7;
+    }
+    
+    .pgb .active.step p {
+        opacity: 1;
+        font-weight: 600;
+    }
+    
+    .pgb .img-circle {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #9E9E9E;
+        border: 4px solid #fff;
+    }
+    
+    .pgb .complete .img-circle {
+        background: #9E9E9E;
+        color: white;
+    }
+    
+    .pgb .active .img-circle {
+        background: #9E9E9E;
+        color: white;
+    }
+    
+    .pgb .step .img-circle:before {
+        content: "";
+        display: block;
+        background: white;
+        height: 4px;
+        width: 50%;
+        position: absolute;
+        bottom: 50%;
+        left: 0;
+        z-index: -1;
+        margin-right: 24px;
+    }
+    
+    .pgb .step .img-circle:after {
+        content: "";
+        display: block;
+        background: white;
+        height: 4px;
+        width: 50%;
+        position: absolute;
+        bottom: 50%;
+        left: 50%;
+        z-index: -1;
+    }
+    
+    .pgb .step:last-of-type .img-circle:after,
+    .pgb .step:first-of-type .img-circle:before {
+        display: none;
+    }
+    
+    #loader-img {
+        display: block;
+        position: relative;
+        left: 50%;
+        top: 50%;
+        width: 200px;
+        height: 200px;
+        margin: -100px 0 0 -100px;
+        z-index: 1001;
+        background-image: url('/assets/images/bmsce-logo.png');
+        background-repeat: no-repeat;
+        background-size: 50%;
+        background-position: center;
+        z-index: 1020;
+        border-radius: 10rem;
+        background-color: white;
+    }
+    
+    .divider-vertical-second-menu {
+        height: 30px;
+        width: 1px;
+        margin: 0 5px;
+        overflow: hidden;
+        background-color: #DDD;
+        border-right: 2px solid #FFF;
+        margin-top: 0.35rem;
+    }
+    
+    .float {
+        position: fixed;
+        width: 40px;
+        height: 40px;
+        bottom: 50px;
+        right: 15px;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 3px 3px 3px #999;
+        stroke: #fff;
+        background-color: #25D366;
+        border-color: #fff
+    }
+    
+    body {
+        font-size: 16px;
+    }
+</style>
+<div id="preloader">
+    <div id="loader-img">
+        <div id="loader" style="border-radius: 10rem;"></div>
+    </div>
+</div>
+
+<style>
+    /*
+/////////////////////////////////////////////////////////
+//  GP Calculator Template                               //
+/////////////////////////////////////////////////////////
+*/
+    /*****************************************
+reset.css
+******************************************/
+    
+    * {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    font,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    caption,
+    tbody,
+    tfoot,
+    figure {
+        margin: 0;
+        padding: 0;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    q:before,
+    q:after {
+        content: "";
+    }
+    
+    sup {
+        vertical-align: super;
+        font-size: smaller;
+    }
+    
+    code {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 12px;
+        color: #272727;
+    }
+    
+     ::selection {
+        background: #81b4fd;
+        color: #000000;
+    }
+    
+     ::-moz-selection {
+        background: rgb(255, 255, 158);
+        color: #369;
+    }
+    
+    a img {
+        border: none;
+    }
+    
+    ol,
+    ul {
+        padding: 10px 0 20px;
+        margin: 0 0 0 35px;
+        text-align: left;
+    }
+    
+    ol li {
+        list-style-type: decimal;
+        padding: 0 0 5px;
+    }
+    
+    ul li {
+        list-style-type: disc;
+        padding: 0 0 5px;
+    }
+    
+    ul ul,
+    ol ol {
+        padding: 0;
+    }
+    /*****************************************
+Global Links CSS
+******************************************/
+    
+    a {
+        color: #002893;
+        text-decoration: none;
+    }
+    
+    .clr {
+        clear: both;
+        float: none;
+    }
+    /*****************************************
+Wrappers
+******************************************/
+    
+    .ct-wrapper {
+        padding: 0px 20px;
+        position: relative;
+        max-width: 1230px;
+        margin: 0 auto;
+    }
+    
+    .outer-wrapper {
+        background: #FFF;
+        position: relative;
+        margin: 6px 0;
+    }
+    
+    .header-wrapper {
+        background: #ffffff;
+        border-bottom: 0px solid #369;
+        display: inline-block;
+        float: left;
+        width: 100%;
+    }
+    
+    .main-wrapper {
+        width: auto;
+        margin-right: 365px;
+    }
+    
+    #content {
+        position: relative;
+        width: 100%;
+        float: left;
+    }
+    
+    .sidebar-wrapper {
+        width: 300px !important;
+        padding: 25px 20px;
+        float: right;
+        border: 1px solid white;
+        margin: 0px 20px 40px 0;
+    }
+    /**** Layout Styling CSS *****/
+    
+    body#layout .header-wrapper {
+        margin-top: 40px;
+    }
+    
+    body#layout #header,
+    body#layout .header-right {
+        width: 50%;
+    }
+    
+    body#layout .outer-wrapper,
+    body#layout .sidebar-wrapper,
+    body#layout .ct-wrapper {
+        margin: 0;
+        padding: 0;
+    }
+    /*****************************************
+Header CSS
+******************************************/
+    
+    #header {
+        float: left;
+        width: auto;
+    }
+    
+    #header-inner {
+        margin: 5px 0px 0px;
+        padding: 0;
+        float: center;
+    }
+    
+    #header h1 {
+        color: #4690B3;
+        font-size: 50px;
+        text-transform: capitalize;
+        line-height: 100px;
+        text-shadow: 1px 1px 1px #000000;
+    }
+    
+    #header h1 a,
+    #header h1 a:hover {
+        color: #4690B3;
+    }
+    
+    #header p.description {
+        color: #333;
+        font-size: 12px;
+        font-style: italic;
+        margin: 0 0 0 35px;
+        padding: 0;
+        text-transform: capitalize;
+    }
+    
+    #header img {
+        border: 0 none;
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+    /***** Header Right CSS *****/
+    
+    .header-right {
+        float: right;
+    }
+    
+    .header-right .widget-content {
+        margin-top: 0 0 0 35px;
+        ;
+    }
+    /*****************************************
+Main Menu CSS
+******************************************/
+    /*-----Responsive Drop Down Menu by MBT ----*/
+    
+    #menu {
+        background: #0088cc url() repeat-x;
+        ;
+        color: #FFF;
+        height: 40px;
+        border-bottom: 0px solid #DDD;
+        border-top: 0px solid #369;
+    }
+    
+    #menu ul,
+    #menu li {
+        margin: 0 auto;
+        padding: 0 0;
+        list-style: none
+    }
+    
+    #menu ul {
+        height: 45px;
+        width: 100%
+    }
+    
+    #menu li {
+        float: left;
+        display: inline;
+        position: relative;
+        font: bold 0.9em Arial;
+    }
+    
+    #menu a {
+        display: block;
+        line-height: 40px;
+        padding: 0 14px;
+        text-decoration: none;
+        color: #ffffff;
+    }
+    
+    #menu li a:hover {
+        color: black;
+        -webkit-transition: all .1s ease-in-out;
+        -moz-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+        -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+        background: white;
+    }
+    
+    #menu input {
+        display: none;
+        margin-bottom: -5px;
+        margin-top: 5px;
+        margin-left: 13px;
+        margin-right: -5px;
+        padding: 0 0;
+        width: 36px;
+        height: 30px;
+        opacity: 0;
+        cursor: pointer
+    }
+    
+    #menu label {
+        font: 30px Arial;
+        display: none;
+        width: 60px;
+        height: 36px;
+        line-height: 43px;
+        text-align: center
+    }
+    
+    #menu label span {
+        font-size: 20px;
+        position: absolute;
+        left: 50px
+    }
+    
+    #menu ul.menus {
+        height: auto;
+        overflow: hidden;
+        width: 170px;
+        background: #191919;
+        position: absolute;
+        z-index: 99;
+        display: none;
+    }
+    
+    #menu ul.menus li {
+        display: block;
+        width: 100%;
+        font: normal 0.8em Arial;
+        text-transform: none;
+        text-shadow: none;
+        border-bottom: 1px dashed #31AFDB;
+    }
+    
+    #menu ul.menus a {
+        color: #FFF;
+        line-height: 35px;
+    }
+    
+    #menu li:hover ul.menus {
+        display: block
+    }
+    
+    #menu ul.menus a:hover {
+        background: #414141;
+        color: #FFF;
+        -webkit-transition: all .1s ease-in-out;
+        -moz-transition: all .1s ease-in-out;
+        -ms-transition: all .1s ease-in-out;
+        -o-transition: all .1s ease-in-out;
+        transition: all .1s ease-in-out;
+    }
+    
+    @media screen and (max-width: 800px) {
+        #menu {
+            position: relative
+        }
+        #menu ul {
+            background: #0088cc;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            left: 0;
+            z-index: 3;
+            margin-top: 40.5px;
+            height: auto;
+            display: none
+        }
+        #menu ul.menus {
+            width: 100%;
+            position: static;
+            padding-left: 20px
+        }
+        #menu li {
+            display: block;
+            float: none;
+            width: auto;
+            font: bold 1em Arial;
+        }
+        #menu input,
+        #menu label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block
+        }
+        #menu input {
+            z-index: 4
+        }
+        #menu input:checked+label {
+            color: white
+        }
+        #menu input:checked~ul {
+            display: block
+        }
+    }
+    /*****************************************
+Custom Widget CSS
+******************************************/
+    /***** Optin Form CSS *****/
+    
+    .opt-in .inner {
+        padding: 35px 0;
+        font-style: italic;
+        color: #ccc;
+        text-shadow: 0 1px 1px #000000;
+    }
+    
+    #features {
+        list-style: none;
+        text-align: left;
+    }
+    
+    ul {
+        list-style: none;
+        text-align: left;
+    }
+    
+    .opt-in .inner h4 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-style: normal;
+        color: #fff;
+        line-height: normal;
+    }
+    
+    .opt-in .inner a {
+        border-bottom: 1px solid #DDDDDD;
+        color: #DDDDDD;
+    }
+    
+    .opt-in .inner a:hover {
+        border-bottom: 1px dashed #DDDDDD;
+    }
+    
+    .opt-in .opt-in-wrap {
+        margin-right: 40%;
+    }
+    
+    .opt-in .info {
+        float: left;
+        width: 100%;
+    }
+    
+    .opt-in .signup-form {
+        background: rgba(0, 0, 0, 0.25);
+        border: 5px solid rgba(0, 0, 0, 0.25);
+        float: right;
+        font-size: 16px;
+        width: 35%;
+        text-align: center;
+    }
+    
+    .opt-in .signup-form .form-inner {
+        font-size: 16px;
+        margin: 35px;
+    }
+    /***** Popular Post *****/
+    
+    .popular-posts ul {
+        padding-left: 0;
+    }
+    
+    .popular-posts ul li {
+        border-bottom: 1px dashed #ccc;
+        list-style: none outside none !important;
+        margin-left: 0 !important;
+        overflow: hidden;
+        padding: 10px 0 !important;
+        transition: all 0.25s linear 0s;
+    }
+    
+    .popular-posts ul li:hover {
+        padding-left: 10px !important;
+    }
+    
+    .sidebar-wrapper .popular-posts ul li:hover {
+        background: #f0f0f0;
+    }
+    
+    .PopularPosts .item-thumbnail img {
+        display: block;
+        float: left;
+        height: 50px;
+        margin-right: 8px;
+        width: 50px;
+    }
+    /***** Form CSS *****/
+    
+    input,
+    select {
+        color: black;
+        margin-top: 5px;
+    }
+    
+    textarea {
+        -moz-box-shadow: inset 0 1px 2px 1px #eee;
+        -webkit-box-shadow: inset 0 1px 2px 1px #eee;
+        background: #fff;
+        border: 1px solid #bbb;
+        box-shadow: inset 0 1px 1px 1px #eee;
+        color: #bbb;
+        font-family: Verdana, Arial, Tahoma, sans-serif;
+        font-size: 9px;
+        margin: 0 2px 0 0;
+        padding: 12px 15px;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+    
+    textarea {
+        color: #333;
+        font-family: 'Lora', Georgia, "Times New Roman", Times;
+        font-size: 12px;
+        text-transform: none;
+    }
+    
+    #subbox {
+        border: none;
+        box-shadow: 0 1px 1px 1px #EEEEEE inset;
+        color: #BBBBBB;
+        font-family: Verdana, Arial, Tahoma, sans-serif;
+        font-size: 9px;
+        padding: 14px 15px 14px 45px;
+        text-transform: uppercase;
+        width: 160px;
+    }
+    /***** Button CSS *****/
+    /***** Profile Widget CSS *****/
+    
+    .Profile img {
+        border: 1px solid #cecece;
+        background: #fff;
+        float: left;
+        margin: 5px 10px 5px 0;
+        padding: 5px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        border-radius: 50px;
+    }
+    
+    .profile-data {
+        color: #999999;
+        font: bold 20px/1.6em Arial, Helvetica, Tahoma, sans-serif;
+        font-variant: small-caps;
+        margin: 0;
+        text-transform: capitalize;
+    }
+    
+    .profile-datablock {
+        margin: 0.5em 0;
+    }
+    
+    .profile-textblock {
+        line-height: 1.6em;
+        margin: 0.5em 0;
+    }
+    
+    a.profile-link {
+        clear: both;
+        display: block;
+        font: 80% monospace;
+        padding: 10px 0;
+        text-align: center;
+        text-transform: capitalize;
+    }
+    /*****************************************
+Sidebar CSS
+******************************************/
+    
+    .sidebar {
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+    
+    .sidebar h2 {
+        font-size: 25px;
+        font-weight: bold;
+        border-bottom: 5px solid #ff7600;
+        margin-bottom: 12px;
+        text-align: center;
+        text-transform: none;
+    }
+    
+    .sidebar .widget {
+        clear: both;
+        font-size: 16px;
+        line-height: 26px;
+        margin-bottom: 25px;
+    }
+    
+    .sidebar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .sidebar li {
+        margin: 0 0 0 15px;
+        padding: 0 0 5px;
+        text-transform: capitalize;
+    }
+    /*****************************************
+Footer Top
+******************************************/
+    
+    .footer-top {
+        border-top: 1px solid #555;
+        padding: 15px;
+        background: #111111;
+        text-shadow: 1px 1px #000000;
+        color: #999;
+        font-size: 90%;
+    }
+    
+    .footer-top .attribution {
+        float: right;
+    }
+    
+    .footer-top .attribution a {
+        font-style: italic;
+    }
+    
+    #footer a,
+    .footer-top a {
+        text-decoration: none;
+        color: #BBBBBB;
+    }
+    
+    #footer a:hover,
+    .footer-top a:hover {
+        text-decoration: underline;
+        color: #D4D4D4;
+    }
+    /*****************************************
+Back to top
+******************************************/
+    
+    #backtotop a,
+    #backtotop a:hover {
+        text-decoration: none;
+        display: block;
+    }
+    
+    #backtotop p {
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        margin-top: 0px;
+    }
+    /*****************************************
+Footer CSS
+******************************************/
+    
+    #footer {
+        border-bottom: 1px solid #222222;
+        -webkit-box-shadow: 0 1px 4px #222222 inset;
+        -moz-box-shadow: 0 1px 4px #222222 inset;
+        box-shadow: 0 1px 4px #222222 inset;
+        text-shadow: 1px 1px #000000;
+        width: 100%;
+        color: #bdbdbd;
+    }
+    
+    .footer {
+        float: left;
+        width: 25%;
+    }
+    
+    .footer h2 {
+        font-size: 19px;
+        letter-spacing: 1px;
+        color: #FFF;
+        text-shadow: 1px 1px 1px #000;
+        padding-bottom: 6px;
+        margin-bottom: 20px;
+        font-family: 'Yanone Kaffeesatz', sans-serif;
+        text-transform: uppercase;
+        border: 0px !important;
+    }
+    
+    .footer .widget {
+        clear: both;
+        font-size: 16px;
+        line-height: 26px;
+        margin: 15px 25px 25px;
+    }
+    
+    .footer ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .footer li {
+        margin: 0 0 0 15px;
+        padding: 0 0 5px;
+        text-transform: capitalize;
+    }
+    
+    .footer-credits {
+        border-top: 1px solid #555;
+        padding: 15px;
+        background: #111111;
+        text-shadow: 1px 1px #000000;
+        color: #999;
+        font-size: 80%;
+        padding-bottom: -1rem;
+    }
+    
+    .footer-credits .attribution {
+        float: right;
+    }
+    
+    .footer-credits .attribution a {
+        font-style: italic;
+    }
+    
+    #footer a,
+    .footer-credits a {
+        text-decoration: none;
+        color: #BBBBBB;
+    }
+    
+    #footer a:hover,
+    .footer-credits a:hover {
+        text-decoration: underline;
+        color: #D4D4D4;
+    }
+    /*****************************************
+Responsive styles
+******************************************/
+    
+    @media screen and (max-width: 1024px) {
+        #header,
+        .header-right {
+            float: none;
+            text-align: center;
+            width: 100%;
+        }
+        .header-right .widget-content {
+            margin: 0;
+        }
+    }
+    
+    @media screen and (max-width: 960px) {
+        .ct-wrapper {
+            padding: 0px 15px;
+        }
+        .main-wrapper,
+        .opt-in .opt-in-wrap {
+            margin-right: 0;
+            width: 100%;
+        }
+        .sidebar-wrapper {
+            float: left;
+            width: auto;
+            margin-left: -10px;
+        }
+        .nav-menu ul {
+            text-align: center;
+        }
+        .nav-menu ul li {
+            float: none;
+        }
+        .opt-in .inner .ct-wrapper {
+            padding: 0 48px;
+        }
+        .opt-in .info {
+            text-align: center;
+        }
+        .opt-in .signup-form {
+            margin-top: 30px;
+            width: 95%;
+            float: left;
+        }
+        #subbox {
+            width: 60%;
+        }
+    }
+    
+    @media screen and (max-width: 768px) {
+        #header p.description {
+            margin: 0;
+        }
+        .header-right {
+            display: none;
+        }
+        #comment-editor {
+            margin-left: -10px;
+        }
+        .footer {
+            width: 50%;
+        }
+    }
+    
+    @media screen and (max-width: 500px) {
+        #header img {
+            width: 100%;
+        }
+        .opt-in .inner .ct-wrapper {
+            padding: 0 10px;
+        }
+    }
+    
+    @media screen and (max-width: 420px) {
+        .comments .comments-content .datetime {
+            display: block;
+            float: none;
+        }
+        .comments .comments-content .comment-header {
+            height: 70px;
+        }
+    }
+    
+    @media screen and (max-width: 320px) {
+        .footer {
+            width: 100%;
+        }
+        .ct-wrapper {
+            padding: 0;
+        }
+        .post-body img {
+            max-width: 230px;
+        }
+        .comments .comments-content .comment-replies {
+            margin-left: 0;
+        }
+    }
+    
+    .sticky {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background: #e8f2fc;
+        width: 95%;
+        height: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        border: 1px solid #A5CEF6;
+    }
+    
+    .sticky a {
+        color: #004489;
+        font-size: 30px;
+        line-height: 1em;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    .adspot_link {
+        display: none
+    }
+    
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 30px;
+        height: 0;
+        overflow: hidden;
+    }
+    
+    .post-body img {
+        height: auto;
+        max-width: 100%;
+        height: auto;
+        max-width: 100%;
+        margin-left: -17px;
+    }
+    
+    * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        color: #485e74;
+        line-height: 1.6;
+        font-family: 'Yantramanav', sans-serif;
+    }
+    
+    .container {
+        max-width: 1170px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 4rem;
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .brand {
+        text-align: center;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+    
+    .brand span {
+        color: #ffffff;
+    }
+    
+    .wrapper {
+        box-shadow: 0 0 20px 0 rgba(57, 82, 163, 0.7);
+    }
+    
+    .wrapper>* {
+        padding: 1em;
+    }
+    /* ------------------- */
+    /* COMPANY INFORMATION */
+    /* ------------------- */
+    
+    .company-info {
+        background: #C3C9DD;
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+    }
+    
+    .company-info h3,
+    .company-info ul {
+        text-align: center;
+    }
+    /* ------- */
+    /* CONTACT */
+    /* ------- */
+    
+    .contact {
+        background: #dcdfea;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+    }
+    /* ---- */
+    /* FORM */
+    /* ---- */
+    
+    .contact form {
+        display: grid;
+        /* grid-template-columns: 1fr 1fr; */
+        grid-gap: 5px;
+    }
+    
+    .contact form label {
+        display: inline;
+    }
+    
+    .contact form p {
+        margin: 0;
+    }
+    
+    .contact form .full {
+        grid-column: 1 / 3;
+    }
+    
+    .contact form input,
+    #files,
+    #imagesec,
+    .contact form textarea {
+        width: 87%;
+        padding: 0.8em;
+        border: solid 1px #627EDC;
+        border-radius: 4px;
+        display: inline;
+    }
+    
+    .contact form button {
+        width: 49%;
+        padding: 0.8em;
+        border: solid 1px #0088cc;
+        border-radius: 4px;
+        display: inline;
+        margin: 2px;
+    }
+    
+    .container>.wrapper>.company-info>.full>button {
+        background: #0088cc;
+        border: 0;
+        color: #e4e4e4;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        display: inline;
+    }
+    
+    .contact form select,
+    #files {
+        width: 100%;
+        border: solid 1px #627EDC;
+        border-radius: 4px;
+        padding: 0.8em;
+        display: inline;
+    }
+    
+    .contact form textarea {
+        resize: none;
+    }
+    
+    .contact form button {
+        background: #0088cc;
+        border: 0;
+        color: #e4e4e4;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        display: inline;
+    }
+    
+    .contact form button:hover,
+    .contact form button:focus {
+        background: #3952a3;
+        color: #ffffff;
+        outline: 0;
+        transition: background-color 2s ease-out;
+    }
+    /* ------------- */
+    /* MEDIA QUERIES */
+    /* ------------- */
+    
+    @media only screen and (min-width: 700px) {
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .wrapper>* {
+            padding: 2em;
+        }
+        .company-info {
+            border-radius: 4px 0 0 4px;
+        }
+        .contact {
+            border-radius: 0 4px 4px 0;
+        }
+        .company-info h3,
+        .company-info ul,
+        .brand {
+            text-align: left;
+        }
+    }
+    
+    .info {
+        color: #002bff;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    #name,
+    #usn,
+    #semester,
+    #branch {
+        font-weight: bolder;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        text-transform: uppercase;
+    }
+    
+    #list img {
+        max-width: 370px;
+        height: 180px;
+        display: inline;
+        border: 3px solid grey;
+        border-radius: 0.7rem;
+        display: block;
+    }
+    
+    #deleteImgs {
+        display: none;
+    }
+    
+    #container {
+        background: #0e52b1;
+        box-shadow: inset 5px 5px 5px #0e52b1, inset -5px -5px 0px #0e52b1;
+        /* box-shadow: 0 10px 5px 0 rgba(0, 0, 0, 0.16), 0 10px 5px 0 rgba(29, 10, 201, 0.89); */
+        transition: box-shadow .25s;
+        background: rgba( 22, 27, 34, 0.25);
+        box-shadow: 0 23px 23px 5px grey;
+        /* backdrop-filter: blur( 4px); */
+        -webkit-backdrop-filter: blur( 4px);
+        border-radius: 10px;
+        border-radius: 0.6rem;
+        font-weight: bolder;
+    }
+</style>
+<style>
+    .card {
+        box-shadow: 0 0 5px 5px grey;
+    }
+    
+    .card-img-top {
+        border: 2px solid white;
+    }
+    
+    label {
+        border-radius: 5px;
+    }
+    
+    th {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        font-weight: bolder;
+    }
+    
+    tr {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        font-weight: bolder;
+    }
+    
+    table tr:last-child {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        font-weight: bolder;
+    }
+    
+    @media print {
+        #footer,
+        #clear,
+        #download,
+        #info,
+        #main_navbar,
+        hr {
+            display: none;
+        }
+        .name,
+        #usn,
+        #branch,
+        #semester,
+        label,
+        .container,
+        span,
+        #Step3_cgpa #FinalCGPA_cgpa {
+            color: black;
+        }
+        label,
+        button,
+        #download,
+        #sgpatoper {
+            color: black;
+        }
+        #userdetails {
+            text-align: left;
+        }
+        #imgdiv {
+            display: block;
+        }
+        body,
+        html {
+            background-color: white;
+            color: black;
+        }
+        #navname {
+            text-align: center;
+            display: block;
+        }
+        #imgnav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 90px;
+            width: 500px
+        }
+        #signstu {
+            color: #0088cc;
+        }
+        #signpro {
+            color: #0088cc;
+        }
+        .name {
+            color: black;
+        }
+        #myDiv {
+            color: #0088cc;
+        }
+        #myDiv1 {
+            color: #0088cc;
+        }
+        #perinfo,
+        #merge,
+        .mail,
+        #mail {
+            display: none;
+        }
+        #step_image,
+        #download_heading,
+        .container>#step_image,
+        .container>#download_heading,
+        .container>#step_image>#user_details {
+            display: none;
+        }
+    }
+    
+    h5 {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    .md-stepper-horizontal {
+        display: table;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #f2f2f2;
+    }
+    
+    .md-stepper-horizontal .md-step {
+        display: table-cell;
+        position: relative;
+        padding: 3px;
+    }
+    
+    .md-stepper-horizontal .md-step:hover,
+    .md-stepper-horizontal .md-step:active {
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+    
+    .md-stepper-horizontal .md-step:active {
+        border-radius: 15% / 75%;
+    }
+    
+    .md-stepper-horizontal .md-step:first-child:active {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    
+    .md-stepper-horizontal .md-step:last-child:active {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    
+    .md-stepper-horizontal .md-step:hover .md-step-circle {
+        background-color: #f2f2f2;
+    }
+    
+    .md-stepper-horizontal .md-step:first-child .md-step-bar-left,
+    .md-stepper-horizontal .md-step:last-child .md-step-bar-right {
+        display: none;
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-circle {
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        background-color: #f2f2f2;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #FFFFFF;
+    }
+    
+    .md-stepper-horizontal.green .md-step.active .md-step-circle {
+        background-color: #00AE4D;
+    }
+    
+    .md-stepper-horizontal.orange .md-step.active .md-step-circle {
+        background-color: #F96302;
+    }
+    
+    .md-stepper-horizontal .md-step.active .md-step-circle {
+        background-color: rgb(33, 150, 243);
+    }
+    
+    .md-stepper-horizontal .md-step.done .md-step-circle:before {
+        font-family: 'FontAwesome';
+        font-weight: 100;
+        content: "\f00c";
+    }
+    
+    .md-stepper-horizontal .md-step.done .md-step-circle *,
+    .md-stepper-horizontal .md-step.editable .md-step-circle * {
+        display: none;
+    }
+    
+    .md-stepper-horizontal .md-step.editable .md-step-circle {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+    }
+    
+    .md-stepper-horizontal .md-step.editable .md-step-circle:before {
+        font-family: 'FontAwesome';
+        font-weight: 100;
+        content: "\f040";
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-title {
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-title,
+    .md-stepper-horizontal .md-step .md-step-optional {
+        text-align: center;
+        color: rgba(0, 0, 0, .26);
+    }
+    
+    .md-stepper-horizontal .md-step.active .md-step-title {
+        font-weight: 600;
+        color: rgba(0, 0, 0, .87);
+    }
+    
+    .md-stepper-horizontal .md-step.active.done .md-step-title,
+    .md-stepper-horizontal .md-step.active.editable .md-step-title {
+        font-weight: 600;
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-optional {
+        font-size: 12px;
+    }
+    
+    .md-stepper-horizontal .md-step.active .md-step-optional {
+        color: rgba(0, 0, 0, .54);
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-bar-left,
+    .md-stepper-horizontal .md-step .md-step-bar-right {
+        position: absolute;
+        top: 18px;
+        height: 5px;
+        border-top: 5px solid #DDDDDD;
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-bar-right {
+        right: 0;
+        left: 50%;
+        margin-left: 20px;
+    }
+    
+    .md-stepper-horizontal .md-step .md-step-bar-left {
+        left: 0;
+        right: 50%;
+        margin-right: 20px;
+    }
+    
+    #list img {
+        max-width: 370px;
+        height: 180px;
+        display: inline;
+        border: 3px solid grey;
+        border-radius: 0.7rem;
+    }
+    
+    #deleteImgs {
+        display: none;
+    }
+    
+    @media ( min-width: 600px) {
+        /* .main {
+            margin-right: 5rem;
+        } */
+        /* .flexbox {
+            display: -webkit-flex;
+            display: flex;
+        } */
+    }
+    
+    #list {
+        width: 120px;
+        height: 120px;
+        height: auto;
+        float: left;
+        margin: 3px;
+        padding: 3px;
+    }
+    
+    label {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    span,
+    #userdetails {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    b,
+    button,
+    .btn {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    table {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+        text-align: left;
+        color: black;
+    }
+    
+    .contact-form>#name {
+        /* position: relative;
+                    width: 80%; */
+        font-size: 1em;
+        padding: 1.2em 1.7em 1.2em 1.7em;
+        /* border-radius: 10px; */
+        border: none;
+        background-color: rgb(214, 214, 214);
+        outline: none;
+        font-weight: bold;
+        transition: 0.4s;
+        padding: 0.5em;
+        color: black;
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    .contact-form>#usn {
+        font-size: 1em;
+        padding: 1.2em 1.7em 1.2em 1.7em;
+        /* border-radius: 10px; */
+        border: none;
+        background-color: rgb(214, 214, 214);
+        outline: none;
+        font-weight: bold;
+        transition: 0.4s;
+        padding: 0.5em;
+        color: black;
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+</style>
+<style>
+    input {
+        text-transform: lowercase;
+    }
+    
+    #emailto {
+        text-transform: lowercase;
+    }
+    
+    #emailto:valid {
+        text-transform: lowercase;
+    }
+    
+     ::placeholder {
+        text-transform: uppercase;
+    }
+</style>
+<style>
+    select,
+    input {
+        font-size: 1em;
+        padding: 1.2em 1.7em 1.2em 1.7em;
+        border: none;
+        background-color: rgb(214, 214, 214);
+        outline: none;
+        font-weight: bold;
+        transition: 0.4s;
+        padding: 0.5em;
+        color: black;
+        border: 1px solid grey;
+        border-radius: 5px;
+    }
+    
+     ::placeholder {
+        color: black;
+        font-weight: 399;
+    }
+    
+    #emailinp {
+        font-size: 1em;
+        padding: 1.2em 1.7em 1.2em 1.7em;
+        /* border-radius: 10px; */
+        border: none;
+        outline: none;
+        font-weight: bold;
+        transition: 0.4s;
+        padding: 0.5em;
+        color: black;
+        border: 1px solid grey;
+        border-radius: 5px;
+        background-color: rgb(243, 243, 243);
+    }
+    
+    .it .btn-orange {
+        background-color: blue;
+        border-color: #777!important;
+        color: #777;
+        text-align: left;
+        width: 100%;
+        display: block;
+    }
+    
+    .it input.form-control {
+        border: none;
+        margin-bottom: 0px;
+        border-radius: 0px;
+        border-bottom: 1px solid #ddd;
+        box-shadow: none;
+        display: block;
+    }
+    
+    .it .form-control:focus {
+        border-color: white;
+        box-shadow: none;
+        outline: none;
+        display: block;
+    }
+    
+    .fileUpload {
+        position: relative;
+        overflow: hidden;
+        display: block;
+    }
+    
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        display: block;
+    }
+    
+    #upload {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    #clear,
+    #download,
+    #radios,
+    #__lets_calc_btn,
+    #mergebtn,
+    #sendmail,
+    #calculate {
+        font-family: 'IBM Plex Sans Hebrew', sans-serif;
+    }
+    
+    @media print {
+        #footer,
+        #clear,
+        #download,
+        #info,
+        #main_navbar,
+        hr {
+            display: none;
+        }
+        .name,
+        #usn,
+        #branch,
+        #semester,
+        label,
+        .container,
+        span,
+        #Step3_cgpa #FinalCGPA_cgpa {
+            color: black;
+        }
+        label,
+        button,
+        #download,
+        #sgpatoper {
+            color: black;
+        }
+        #userdetails {
+            text-align: left;
+        }
+        #imgdiv {
+            display: block;
+        }
+        body,
+        html {
+            background-color: white;
+            color: black;
+        }
+        #navname {
+            text-align: center;
+            display: block;
+        }
+        #imgnav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            height: 90px;
+            width: 500px
+        }
+        #signstu {
+            color: #0088cc;
+        }
+        #signpro {
+            color: #0088cc;
+        }
+        .name {
+            color: black;
+        }
+        #myDiv {
+            color: #0088cc;
+        }
+        #myDiv1 {
+            color: #0088cc;
+        }
+        #perinfo,
+        #merge,
+        .mail,
+        #mail {
+            display: none;
+        }
+        #step_image,
+        #download_heading,
+        .container>#step_image,
+        .container>#download_heading,
+        .container>#step_image>#user_details {
+            display: none;
+        }
+    }
+    
+    label {
+        text-transform: capitalize;
+    }
+    
+    .label {
+        text-transform: capitalize;
+    }
+    
+    .container>.row>label {
+        text-transform: capitalize;
+    }
+    
+    #something {
+        display: none;
+    }
+    
+    #something:target {
+        display: block;
+    }
+    
+    @media print {
+        #md-stepit {
+            display: none;
+        }
+        .md-stepper-horizontal {
+            display: none;
+        }
+    }
+    
+    h1.second {
+        font-weight: bolder;
+    }
+    
+    h1.second span {
+        position: relative;
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 10px;
+        border-bottom: 1px solid mediumseagreen;
+    }
+    
+    h1.second span:after {
+        content: '';
+        position: absolute;
+        bottom: calc(-100% - 1px);
+        margin-left: -10px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        border-top: 1px solid mediumseagreen;
+    }
+    
+    @media print {
+        .download_heading,
+        #info_cgpa,
+        #merge,
+        #up,
+        #sendmail,
+        .mail,
+        .fallback,
+        #mail,
+        form,
+        input,
+        .container>#downloadinfo,
+        #downloadinfo,
+        .footer-credits,
+        #navigation,
+        .mail,
+        #quickinfo,
+        #calculate {
+            display: none;
+        }
+        #pullup {
+            margin-top: -16rem;
+        }
+        .container>.row>#userdetails>#perc {
+            margin-top: -2rem;
+        }
+    }
+</style>
+<div class='header-wrapper'>
+
+    <div class='ct-wrapper'>
+        <div class='header-inner-wrap'>
+            <div class='header section' id='header' style="margin-bottom: -1rem;">
+                <div class='widget Header' data-version='1' id='Header1' style="pointer-events: none">
+                    <div id='header-inner'>
+
+                        <a href="#" style='display: block;'>
+                            <div class="mx-auto order-0">
+
+                                <a id="navname" class="navbar-brand abs" href="#" style="font-weight:bolder;">
+                                    <p id="resphead" style="color:#0088cc;font-size: larger;text-align: center;">SEMESTER / CUMULATIVE <br> GRADE POINTS CALCULATOR</p>
+                                </a>
+
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /header-inner-wrap -->
+        <div class='header-right section' id='header-right'>
+            <div class='widget HTML' data-version='1' id='HTML1'>
+                <div class='widget-content'>
+                </div>
+            </div>
+        </div>
+        <div class='header-right section' id='header-right'>
+            <div class='widget HTML' data-version='1' id='HTML1'>
+                <img alt='gradepointcalculator' id='Header1_headerimg' src="/assets/images/bmsce.png" style='' />
+
+                <div class='clear'></div>
+            </div>
+        </div>
+        <div class='clr'></div>
+    </div>
+</div>
+<div class='clr'></div>
+
+<div class='navigation section' id='navigation'>
+    <div class='widget HTML' data-version='1' id='HTML99'>
+        <div class='nav-menu' style="font-size: 18px">
+            <nav id='menu'>
+                <div class='ct-wrapper'>
+                    <input type='checkbox' />
+                    <span></span> <label>&#8801; </label>
+                    <ul>
+                        <li><a href="homepage.html">HOME</a>
+                        </li>
+                        <li><a href="sgpa-main.html">SGPA-CALCULATOR</a>
+                        </li>
+                        <li>
+                            <a href="cgpa-main.html">
+                                CGPA-CALCULATOR
+                            </a>
+                        </li>
+                        <li><a href="percentage-main.html">
+                                PERCENTAGE-CALCULATOR</a>
+                        </li>
+                        <li>
+                            <a href="faq-section.html">
+                                FAQ-SECTION
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://results.bmsce.in/">
+                                RESULTS 
+                            </a>
+                        </li>
+
+
+                        <li>
+                            <a href="contact.html">
+                                CONTACT-US
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.html">
+                                EXIT-NEW ENTRY
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<body>
+
+    <div style="margin-top: 1.5rem;margin-bottom: 1rem;display: none;" id="imgdiv"> <img id="bmsce_logo" src="/assets/images/logo.jpg" alt="..." class="rounded-circle mx-auto d-block" style="border-radius: 10rem;"></div>
+
+    <div class="container" id="userdetails" style="margin-top: 4rem;font-size: 16px;">
+
+        <div class="flexbox">
+            <article class="main">
+                <span style="display: inline-block;">
+                    <p style="display: none;">Select images, they will be stored in your browser and will be displayed even after reload. Selecting big images (&gt; 2MB) can crash your browser.</p>
+                    <input type="file" id="files" style="display: none;">
+                
+                
+                    <p id="state" style="display: none;">No images stored in your browser.</p>
+                    <span id="list">
+                    </span>
+
+                <a href="#" id="deleteImgs" style="visibility: hidden;">Delete Images</a>
+                </span>
+            </article>
+
+            <section class="side" style="display: inline-block;margin-left: 0.6rem;">
+                <span style="font-size: 16px;margin-right: 2.2rem;color: #0088cc;"></i><b>NAME : </b></span> <label class="name" style="font-size: 16px;color: black;text-align: left;font-weight: bolder;padding: 0.5rem;@media print{color:black}"></label>
+                <br>
+
+                <span style="font-size: 16px;margin-right: 3rem;color: #0088cc;"><b>USN : </b> </span>
+                <span><label class="usn" style="min-width: 50%;;color: black;text-align: left;font-weight: bolder;padding: 0.5rem;font-size: 16px;"></label></span>
+                </span>
+                <br>
+
+                <span style="font-size: 16px;margin-right: 0.9rem;color: #0088cc;"><b>BRANCH : </b> </span>
+                <span><label class="branch" style="min-width: 50%;color: black;text-align: left;font-weight: bolder;padding: 0.5rem;font-size: 16px;"></label></span>
+                </span>
+                <br>
+                <span style="font-size: 16px;color: #0088cc;"><b>SEMESTER : </b> </span>
+                <span><label class="semester" style="min-width: 50%;color: black;text-align: left;font-weight: bolder;padding: 0.5rem;font-size: 16px;"></label></span>
+                </span>
+            </section>
+        </div>
+        <hr style="
+        border: 0;
+           box-shadow: 0 0 10px 1px #888;
+           border-top: 4px groove #888;">
+
+    </div>
+
+
+
+
+
+    </div>
+    <div id="main" style="margin-top: 2.5rem;">
+
+        <div class="container" id="Step1">
+
+            <div class="quick-guide" id="userdetails" style="font-size: 16px;">
+                <h1 class="second" style="font-size: 19px;text-align: center;" id="quickinfo"><span>A QUICK GUIDE TO SGPA, CGPA AND % CALCULATION</span></h1>
+
+            </div>
+
+            <div class="md-stepper-horizontal grey" id="md-stepit">
+                <div class="md-step active ">
+                    <div class="md-step-circle"><span>1</span></div>
+                    <div class="md-step-title">Enter Your Cummulative CGPA.</div>
+                    <div class="md-step-bar-left"></div>
+                    <div class="md-step-bar-right"></div>
+                </div>
+                <div class="md-step active ">
+                    <div class="md-step-circle"><span>2</span></div>
+                    <div class="md-step-title">Calculate CGPA and Download % Card.</div>
+
+                    <div class="md-step-bar-left"></div>
+                    <div class="md-step-bar-right"></div>
+                </div>
+                <div class="md-step active">
+                    <div class="md-step-circle"><span>3</span></div>
+                    <div class="md-step-title">Wanna Share? Mail your % Card.</div>
+                    <div class="md-step-bar-left"></div>
+                    <div class="md-step-bar-right"></div>
+                </div>
+
+            </div>
+
+            <div class="container" style="background-color: #f2f2f2;">
+                <div class="row">
+                    <div class="container" id="userdetails" style="margin-top: -0.8rem;font-size: 16px;">
+                        <h1 class="second" style="font-size: 19px;text-align: center;margin-bottom: -2rem;" id="perc"><span>PERCENTAGE CALCULATION</span></h1>
+
+                    </div>
+                </div>
+                <div class="row" id="perinfo">
+                    <div> <label class="label success" style="min-width:100%;margin-left: 0.5rem;color: #042893;text-align: left;font-weight: bolder;;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+text-transform: capitalize;"> <span style="width:max-content;  color: black;font-size: larger;"> &#9432;</span> For <u style="font-family: 'IBM Plex Sans Hebrew', sans-serif;
+">CGPA</u>  : Enter Your Cummulative CGPA , Value To Be Less Than 10. (If You Haven't Calculated CGPA, <a href="cgpa-main.html" style="color: #005783;text-decoration: underline;">Click Here</a> ).</label>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class='col-75'>
+                        <center> <input type="number" id="n1" value="0" class="marks" style="border: 2px solid black;" /></center>
+                    </div>
+                </div><br/><br/>
+
+                <div class="row" style="margin-top: -2rem;">
+                    <div class='col-75'>
+                        <div class="btn-group" style="margin-bottom: 2rem;">
+                            <button type="submit" class="btn btn-success" onclick="cgpa();" id="calculate" value="Calculate" style="border: 2px solid #161b22;background-color: #042893;;font-weight:bolder;
+                    "> CALCULATE</button><br><br>
+
+                        </div>
+                    </div>
+                </div>
+
+                <span>  <button class="btn btn-success" type="button"  id="sgpa_css" style="background-color: #34bafd;color: black;pointer-events: none;" ><i class="fa fa-check-circle "
+        style=" font-size: larger;border-radius:5px;" id="symbol"> </i> PERCENTAGE </button></span><span>
+                       <input type="text" size="4" class="form-control" maxlength="4" id="percent"  readonly style="width: 250px;text-align: center;color: black;font-weight: bolder;border-radius:5px;pointer-events: none;"></span>
+
+                <div class="row" id="perinfo">
+                    <div> <label class="label success" style="min-width:100%;color: #042893;text-align: left;font-weight: bolder;margin-bottom: -1rem;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+text-transform: capitalize;"><span 
+                            style="width:max-content;  color: black;font-size: larger;"> &#9432;</span>  <u style="font-family: 'IBM Plex Sans Hebrew', sans-serif;
+text-transform: capitalize;">Note</u>: Percentage Results May Not Be Accurate <a target="_blank"href="/assets/pdfs/percentage.pdf" style="color: #18a0f5;"><u>Click Here</u> </a> To Know How This Was Done.</label>
+                    </div>
+                </div>
+
+                <br><br>
+                <div class="btn-group" style="margin-bottom: 2rem;">
+                    <button type="submit" id="clear" class="btn btn-success" onclick="window.print();" value="Calculate" value="Clear" style="border: 2px solid #161b22;margin-right: 1rem;background-color: #042893;;font-weight:bolder;border-radius:5px;
+                " disabled> DOWNLOAD</button><br><br>
+                    <button type="button" id="download" class="btn btn-success " disabled onclick="ClearData();" style="border: 2px solid #161b22;background-color: #042893;;font-weight:bolder;border-radius:5px;"> CLEAR</button><br><br>
+
+                </div>
+
+            </div>
+
+
+
+            <hr style="
+             border: 0;
+                box-shadow: 0 0 10px 1px #888;
+                border-top: 4px groove #888;">
+
+
+            <div class="mail">
+
+
+
+                <head>
+
+
+
+                    <link rel="stylesheet" href="/css/bootstrap.min.css">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous"
+                    />
+
+                    <link rel="stylesheet" href="/lib/dropzone-5.7.0/dist/dropzone.css">
+                    <link rel="stylesheet" href="/css/style.css">
+                </head>
+
+                <body>
+
+
+                    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" integrity="sha512-9UR1ynHntZdqHnwXKTaOm1s6V9fExqejKvg5XMawEMToW4sSw+3jtLrYfZPijvnwnnE8Uol1O9BcAskoxgec+g==" crossorigin="anonymous"></script>
+
+                    <script src="/lib/dropzone-5.7.0/dist/dropzone.js"></script>
+                    <script src="/js/main.js"></script>
+                </body>
+
+</html>
+<div class="mail" style="text-transform: lowercase;">
+    <div class="" id="userdetails" style="margin-top: -0.8rem;font-size: 16px;text-transform: lowercase;">
+        <h1 class="second" style="font-size: 19px;text-align: center;text-transform: uppercase;"><span>MAIL YOUR GRADE CARDS FROM HERE</span></h1>
+
+    </div>
+
+    <div class="form">
+
+        <div class="form-group" style="text-transform: uppercase;">
+            <!-- <input class="form-control" style="text-transform: lowercase;font-weight: bolder;" type="email" name="emailto" id="emailto" placeholder="TO EMAIL :" data-role="tagsinput" required style="padding:20px;text-transform: lowercase;"> -->
+
+            <div class="input-group">
+                <span class="fileUpload btn btn" style="color:black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+margin-right: 2.4rem;background-color: #f2f2f2;margin-left: -1rem;">
+                            <span class="upl" id="upload">NAME</span>
+
+
+                </span>
+                <input type="text" class="form-control" name="name" id="name" readonly style="color: black;border: 2px solid black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+border-radius: 5px;">
+
+
+                <!-- btn -->
+            </div>
+
+            <div class="input-group" style="margin-top: 1rem;">
+                <span class="fileUpload btn btn" style="color:black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+margin-right: 3.1rem;background-color: #f2f2f2;margin-left: -1rem;">
+                            <span class="upl" id="upload">USN</span>
+
+
+                </span>
+                <input type="text" class="form-control" name="name" id="usn" readonly style="color: black;border: 2px solid black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+border-radius: 5px;">
+
+
+                <!-- btn -->
+            </div>
+            <div class="input-group" style="margin-top: 1rem;">
+                <span class="fileUpload btn btn" style="color:black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+background-color: #f2f2f2;margin-right: 01rem;margin-left: -1rem;margin-right:1.1rem">
+                            <span class="upl" id="upload">BRANCH</span>
+
+
+                </span>
+                <input type="text" class="form-control" name="name" id="branch" readonly style="color: black;border: 2px solid black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+border-radius: 5px;">
+
+
+                <!-- btn -->
+            </div>
+            <div class="input-group" style="margin-top: 1rem;">
+                <span class="fileUpload btn btn" style="color:black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+margin-right:0.1rem;background-color: #f2f2f2;margin-left: -1rem;">
+                            <span class="upl" id="upload">SEMESTER</span>
+
+
+                </span>
+                <input type="text" class="form-control" name="name" id="semester" readonly style="color: black;border: 2px solid black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+border-radius: 5px;">
+
+
+                <!-- btn -->
+            </div>
+
+            <div class="input-group" style="margin-top: 1rem;">
+                <span class="fileUpload btn btn" style="color:black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+margin-right: 0.1rem;background-color: #f2f2f2;margin-left: -1rem;">
+                            <span class="upl" id="upload">EMAIL TO </span>
+
+
+                </span>
+
+                <input type="email" data-role="tagsinput" name="emailto" id="emailto" placeholder="TO : " style="text-transform: lowercase;" onkeyup="this.value = this.value.toLowerCase()" style="color: black;border: 2px solid black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+border-radius: 5px;">
+
+            </div>
+            <!-- btn -->
+        </div>
+    </div>
+</div>
+</div>
+
+<div id='email_template'></div>
+
+<div class="input-group" style="margin-top: 1rem;" id="mail">
+    <span class="fileUpload btn btn" style="color:black;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+margin-right: 2.8rem;background-color: #f2f2f2;margin-left: -1rem;">
+                <span class="upl" id="upload">ATTACH YOUR GRADE CARD HERE</span>
+    <input type="file" class="upload up" id="up" onchange="readURL(this);" multiple/>
+
+    </span>
+
+
+    <!-- btn -->
+</div>
+<form action="#" class="dropzone mt-2" id="email_attachments">
+
+    <div class="fallback">
+        <input type="file" name="file" multiple>
+    </div>
+
+</form>
+<div class="row" id="info_cgpa">
+    <div> <label class="label success" style="min-width:100%;margin-bottom: -1rem;;color: #042893;text-align: left;font-weight: bolder;;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+text-transform: capitalize;"><i class="fa fa-info-circle"
+                style="width:max-content;  color: black;font-size: larger;"> </i><span 
+                style="width:max-content;  color: black;font-size: larger;text-transform: capitalize;"></span> 1. You can Enter Multiple Email ids To send Your Grade Card.</label>
+    </div>
+</div>
+<div class="row" id="info_cgpa">
+    <div> <label class="label success" style="min-width:100%;margin-bottom: -1rem;color: #042893;text-align: left;font-weight: bolder;font-family: 'IBM Plex Sans Hebrew', sans-serif;
+text-transform: capitalize;"><i class="fa fa-info-circle"
+                    style="width:max-content;  color: black;font-size: larger;"> </i><span 
+                    style="width:max-content;  color: black;font-size: larger;text-transform: capitalize;"></span> 2. Make sure To upload the Percentage Card and wait for the file to upload.</label>
+    </div>
+</div>
+<div class="btn-group">
+    <button type="submit" id="sendmail" class="btn btn-success" onclick="Send_Email()" style="border: 2px solid #161b22;background-color: #042893;;font-weight:bolder;border-radius: 5px;font-size: 16px;margin-top: 1rem;"> SEND MAIL</button><br><br>
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+</head>
+
+
+
+
+</html>
+
+
+<div id="pullup">
+
+</div>
+<div style="color:white;margin-left: 2.75rem;" id="myDiv1">
+    <div id="myDiv" style="
+        font-size: larger;font-weight: bolder;"></div>
+</div>
+
+<div id="myDiv1">
+    <div style="color:white;
+        font-size: larger;margin-left: 2.3rem;" id="myDiv">
+        <span style="margin-left: 0.5rem;float: left;margin-top: 3rem;"></i><b>Signature of Student : </b></span> <br><label class="name" style="margin-top: 3rem;margin-left: -12.3rem;font-size: 18px;text-align: left;font-weight: bolder;padding: 0.5rem;"></label>
+        <br>
+
+
+        <span style="margin-left: 0.5rem;"></i><b>Signature of Proctor : </b></span> <br><label style="min-width: 50%;font-size: 18px;text-align: left;font-weight: bolder;padding: 0.5rem;@media print{color:black}"></label>
+        <br>
+    </div>
+</div>
+
+</body>
+
+<script>
+    function showDateTime() {
+        var myDiv = document.getElementById("myDiv");
+
+        var date = new Date();
+        var dayList = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var monthNames = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ];
+        var dayName = dayList[date.getDay()];
+        var monthName = monthNames[date.getMonth()];
+        var today = `${dayName}, ${monthName} ${date.getDate()}, ${date.getFullYear()}`;
+
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        var sec = date.getSeconds();
+
+        var time = hour + ":" + min + ":" + sec;
+        myDiv.innerText = `Downloaded On : ${today} AT ${time}`;
+    }
+    setInterval(showDateTime, 1000);
+</script>
+
+
+
+
+
+
+
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<div class='footer-credits' style="font-size: 17px;margin-bottom: -1rem;">
+    <div class='ct-wrapper' style="text-align: center;color: white;font-weight: bolder;margin-bottom: -1rem;">
+
+        <p style="color: white;font-weight: bolder;"><b>&copy;</b> Copyright
+            <script>
+                document.write(new Date().getFullYear())
+            </script>. All Rights Reserved <br>Created With <span style="color: crimson;margin-right: 2px;">&#10084; </span> By <a href="https://bit.ly/2XMDijq" target="_blank" style="color: hsl(197, 100%, 55%);font-size: 17px;text-decoration: underline;"><b> Karthik.S</b></a>            (UG CSE)</p>
+        </p>
+    </div>
+    <!-- /ct-wrapper -->
+</div>
+<a href="whatsapp://send?text=Link : https://gradepointcalculator.herokuapp.com/" class="float">
+    <div aria-hidden="true " class="resp-sharing-button__icon resp-sharing-button__icon--solid ">
+        <svg xmlns="http://www.w3.org/2000/svg " viewBox="0 0 24 24 ">
+            <path
+                d="M20.1 3.9C17.9 1.7 15 .5 12 .5 5.8.5.7 5.6.7 11.9c0 2 .5 3.9 1.5 5.6L.6 23.4l6-1.6c1.6.9 3.5 1.3 5.4 1.3 6.3 0 11.4-5.1 11.4-11.4-.1-2.8-1.2-5.7-3.3-7.8zM12 21.4c-1.7 0-3.3-.5-4.8-1.3l-.4-.2-3.5 1 1-3.4L4 17c-1-1.5-1.4-3.2-1.4-5.1
+    0-5.2 4.2-9.4 9.4-9.4 2.5 0 4.9 1 6.7 2.8 1.8 1.8 2.8 4.2 2.8 6.7-.1 5.2-4.3 9.4-9.5 9.4zm5.1-7.1c-.3-.1-1.7-.9-1.9-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.5-2.3-1.4c-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6s.3-.3.4-.5c.2-.1.3-.3.4-.5.1-.2
+    0-.4 0-.5C10 9 9.3 7.6 9 7c-.1-.4-.4-.3-.5-.3h-.6s-.4.1-.7.3c-.3.3-1 1-1 2.4s1 2.8 1.1 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.3-.3-.4-.6-.5z " />
+        </svg>
+    </div>
+</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+
+<!-- All javascript Codes -->
+
+<script>
+    var imagesObject = [];
+
+    function handleFileSelect(evt) {
+        var files = evt.target.files; // FileList object
+
+        // Loop through the FileList and render image files as thumbnails.
+        for (var i = 0, f; f = files[i]; i++) {
+
+            // Only process image files.
+            if (!f.type.match('image.*')) {
+                continue;
+            }
+
+            var reader = new FileReader();
+
+            // Closure to capture the file information.
+            reader.onload = function(e) {
+                displayImgData(e.target.result)
+                addImage(e.target.result);
+            };
+
+            reader.readAsDataURL(f);
+        }
+    }
+
+    function loadFromLocalStorage() {
+        var images = JSON.parse(localStorage.getItem("images"))
+        let givemargin = document.getElementById("givemargin");
+        if (images) {
+            imagesObject = images;
+
+            displayNumberOfImgs();
+            images.forEach(displayImgData);
+        }
+
+
+    }
+
+    function addImage(imgData) {
+        imagesObject.push(imgData);
+        displayNumberOfImgs();
+        localStorage.setItem("images", JSON.stringify(imagesObject));
+    }
+
+    function displayImgData(imgData) {
+        var span = document.createElement('span');
+        span.innerHTML = '<img class="thumb" src="' + imgData + '"/>';
+        document.getElementById('list').insertBefore(span, null);
+    }
+
+    function displayNumberOfImgs() {
+        if (imagesObject.length > 0) {
+
+            document.getElementById("state").innerHTML = imagesObject.length + " image" + ((imagesObject.length > 1) ? "s" : "") + " stored in your browser";
+
+            document.getElementById("deleteImgs").style.display = "inline";
+
+        } else {
+            document.getElementById("state").innerHTML = "No images stored in your browser.";
+            document.getElementById("deleteImgs").style.display = "none";
+        }
+
+
+    }
+
+    function deleteImages() {
+        imagesObject = [];
+        localStorage.removeItem("images");
+        displayNumberOfImgs()
+        document.getElementById('list').innerHTML = "";
+    }
+
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+    document.getElementById('deleteImgs').addEventListener("click", deleteImages);
+    document.getElementById('files').disabled = false;
+    loadFromLocalStorage();
+</script>
+
+<script src="/assets/js/percentage.js"></script>
+<script>
+    let name = localStorage.getItem("name-key");
+
+    let usn = localStorage.getItem("usn-key");
+    let branch = localStorage.getItem("branch-key");
+    let semester = localStorage.getItem("sem-key");
+    // document.getElementById("usn").innerHTML = usn;
+
+    // document.getElementById("branch").innerHTML = branch;
+    // document.getElementById("semester").innerHTML = semester;
+
+    for (let i = 0; i < document.getElementsByClassName("name").length; i++) {
+        document.getElementsByClassName("name")[i].innerHTML = name;
+    }
+    for (let i = 0; i < document.getElementsByClassName("usn").length; i++) {
+        document.getElementsByClassName("usn")[i].innerHTML = usn;
+    }
+    for (let i = 0; i < document.getElementsByClassName("branch").length; i++) {
+        document.getElementsByClassName("branch")[i].innerHTML = branch;
+    }
+    for (let i = 0; i < document.getElementsByClassName("semester").length; i++) {
+        document.getElementsByClassName("semester")[i].innerHTML = semester;
+    }
+    (() => {
+
+        const n_key = localStorage.getItem('name-key');
+        const usn_key = localStorage.getItem('usn-key');
+        const branch_key = localStorage.getItem('branch-key');
+        const sem_key = localStorage.getItem('sem-key');
+        document.getElementById('usn').value = usn_key;
+        if (n_key)
+            document.getElementById('name').value = n_key;
+        if (usn_key)
+            document.getElementById('usn').value = usn_key;
+        if (branch_key)
+            document.getElementById('branch').value = branch_key;
+        if (sem_key)
+            document.getElementById('semester').value = sem_key;
+
+    })();
+    window.history.replaceState('', '', '/');
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
+
+
+</body>
