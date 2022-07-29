@@ -40,3 +40,6 @@ Here again,<br>
 
 <h3>3.GPA (Grade Point Average) to Percentage Calculator:</h3><br>
 This is a one step process the Student needs to just enter this Cumulative / Semester Grade Point Average and his Percentage will be shown as calculated. This again the student can mail it to the respective recipients.<br>
+
+<h2>Deployed Link</2h2>
+<h3>Link - <a href="https://gpc.bmsce.in/">https://gpc.bmsce.in/</a></h3>
