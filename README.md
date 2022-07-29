@@ -45,7 +45,7 @@ This is a one step process the Student needs to just enter this Cumulative / Sem
 <h3>Link - <a href="https://gradepointcalculator.herokuapp.com/">[https://gradepointcalculator.herokuapp.com/]</a></h3>
 
 <h2>Walkthrough Video</h2>
-https://user-images.githubusercontent.com/89517611/181722488-5f9656e8-aa4d-4ffe-82cd-96df16362b21.mp4
+<h3>Link - <a href="https://www.youtube.com/watch?v=C-lH3h00PbI&t">[https://gradepointcalculator.herokuapp.com/]</a></h3>
 
 
 
